@@ -1,0 +1,16 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}} !
+  </h1>
+</div>
+
+<button (click)="funcionMostrar()" name="btnLista">{{toggleList?"Ocultar lista":"Mostrar Lista"}}</button>
+<div #listaColores class="listaColores" *ngIf="toggleList">
+  <ul>
+    <li *ngFor="let color of colores">{{color}}</li>      
+    <form (submit)="addColor(varColor)">
+      <input #varColor type="text" name="inputColor" placeholder="Ingresar Color">
+    </form>
+  </ul>
+</div>
